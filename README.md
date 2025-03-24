@@ -21,6 +21,7 @@ El frontend corre en `http://localhost:3000`. Podemos ir a `http://localhost:300
 y a `http://localhost:3000/admin` para ver la vista de un usuario administrador.
 
 ## Backend
+
 Para el backend se usa Spring Boot con Java 17 y gradle. Para correr el backend, ejecutar los siguientes comandos:
 
 ```bash
