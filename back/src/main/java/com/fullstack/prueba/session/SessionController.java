@@ -11,6 +11,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @RequestMapping("/session")
 @CrossOrigin(origins = "http://localhost:3000")
 public class SessionController {
+    private static final int SESSION_DURATION = 10;
+
+
     private final ConcurrentHashMap<String, Session> sessions = new ConcurrentHashMap<>();
 
     @GetMapping("/{id}")
@@ -27,7 +30,7 @@ public class SessionController {
     public Session createSession(@RequestBody String user) {
         String id = UUID.randomUUID().toString();
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        Session session = new Session(id, timestamp, user, 10);
+        Session session = new Session(id, timestamp, user, SESSION_DURATION);
         sessions.put(id, session);
         return session;
     }
